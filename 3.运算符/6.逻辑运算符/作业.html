@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //(1)
+        // var grade = 80;
+        //console.log(grade >= 60);
+        //(2)
+        // var year = 2019;
+        // var runNian = year % 4 ===0 && year % 100 !==0 || year % 400 ===0;
+        // runNian && console.log(29 +"天");
+        // !runNian && console.log(28+"天")
+
+        //(3)第一种方法
+        // var money = 10000,
+        //     month = 24,
+        //     earn = 4;
+        // var earnMoney = money * earn / 100 / 12 * month;
+        // var earnMoney1 = money * earn * 1.2 / 100 / 12 * month;
+        // money <= 10000 && console.log(earnMoney);
+        // money >= 100000 && console.log(earnMoney1);
+        //
+        //(3)第二种方法
+        var money = 100000,
+            month = 24,
+            earn = 4;
+        money >= 100000 && (earn = earn * 1.2);
+        var earnMoney = money * earn / 100 / 12 * month;
+        console.log("利息" + earnMoney);
+    </script>
+</body>
+
+</html>

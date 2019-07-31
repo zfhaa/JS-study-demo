@@ -1,2 +1,0 @@
-# JS-study-demo
-js
