@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //第一题
+        //for(i=0;i<=100;i++){
+        //    console.log("*");
+        //}
+
+        //第二题
+        //  var num = +prompt("请输入一个数");
+        //  for(var i=1;i<=num;i++){
+        //      console.log("*");
+        //  }
+        //第三题
+        // var r = 3;
+        // var c = 5;
+        // for (var i = 0; i < r; i++) {
+        //     var star = "";
+        //     for (var j = 0; j < 5; j++) {
+        //         star += "*";
+        //     }
+        //     console.log(star)
+        // }
+        //第四题
+        //var r = 5 ;
+        //for (var i = 1; i <= 5; i++) {
+        //    //输出一行*号数量为i
+        //    var str = "";
+        //    for (var j = 0; j < i; j++) {
+        //        str += "*"; //i最大为5，相当于循环5回，每回加一个"*"
+        //    }
+        //    console.log(str);
+        //}
+
+        //第五题
+        //  var r = 5;
+        // for (var i = 1; 1 <= r ; i++) {
+        //     //输出一行空格数量为r-i
+        //     var str = ""
+        //     for (var j = 0; i < r - i; j++) {
+        //         str += " ";
+        //     }
+        //     for (var j = 0; j < 2 * i - 1; j++) {
+        //         str = "*";
+        //     }
+        //     console.log(str)
+        // }
+        //第七题
+        // for(var i=1;i<=100;i++){
+        //     
+        //     if(i%2!==0){
+        //         console.log(i);
+        //     }
+        // }
+        //第9题
+        // var sum = 0;
+        // for (var i = 0; i <= 10; i++) {
+        //     if (i % 2 !== 0) {
+        //         sum += i;
+        //     }
+        //     
+        // }
+        //  console.log(sum);
+        //第12题 1-100内所有素数之和
+        // var sum = 0;
+        // for (var i = 2; i <= 100; i++) {
+        //     //判断i是不是素数
+        //     var isFind = false; //没有找到
+        //     for (var j = 2; j < i - 1; j++) {
+        //         if (i % j === 0) {
+        //             isFind = true;
+        //             break;
+        //         }
+        //     }
+        //     if (i > 1 && !isFind) {
+        //         sum += i;
+        //     }
+        // }
+        // console.log(sum);
+
+        //第14题 九九乘法表
+
+        for (var i = 1; i <= 9; i++) {
+            var str = ""
+            for (var j = 1; j <= i; j++) {
+                str += `${j}*${i}=${i*j}\t`;
+            }
+            console.log(str);
+        }
+    </script>
+</body>
+
+</html>

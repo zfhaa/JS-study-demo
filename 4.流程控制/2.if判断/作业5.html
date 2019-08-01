@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var fist = prompt("请出拳");
+        if (fist == "拳头" || fist == "剪刀" || fist == "布") {
+            //模拟计算机出拳
+            var rad = Math.random(); //0~1
+            var pacFist; //计算机出拳
+            if (rad < 0.333) {
+                pacFist = "拳头";
+            } else if (rad < 0.666) {
+                pacFist = "剪刀";
+            } else {
+                pacFist = "布";
+            }
+            console.log(`你的出拳：${fist},电脑出拳：${pacFist}`);
+            if (fist === "剪刀" && pacFist === "布" || fist === "拳头" && pacFist === "剪刀" || fist === "布" && pacFist ===
+                "石头") {
+                console.log("你赢了");
+            } else if (fist === "剪刀" && pacFist === "剪刀" || fist === "拳头" && pacFist === "拳头" || fist === "布" &&
+                pacFist === "布") {
+                console.log("平局");
+            } else {
+                console.log("你输了");
+            }
+
+        } else {
+            console.log("输入错误")
+        }
+    </script>
+</body>
+
+</html>
