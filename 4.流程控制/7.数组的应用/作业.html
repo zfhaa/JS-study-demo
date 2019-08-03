@@ -118,18 +118,98 @@
         //第八题
         //冒泡排序法
 
-        var nums = [2, 5, 1, 46, 23, 45];
-        for (var i = 0; i < nums.length - 1; i++) {
-            for (var j = 0; j < nums.length - 1; j++) {
-                if (nums[j] > nums[j + 1]) {
-                    var temp = nums[j];
-                    nums[j] = nums[j + 1];
-                        nums[j + 1] = temp;
+        //  var nums = [2, 5, 1, 46, 23, 45];
+        //  for (var i = 0; i < nums.length - 1; i++) {
+        //      for (var j = 0; j < nums.length - i; j++) {
+        //          if (nums[j] > nums[j + 1]) {
+        //              var temp = nums[j];
+        //              nums[j] = nums[j + 1];
+        //                  nums[j + 1] = temp;
+        //          }
+        //      }
+        //      
+        //  }
+        //  console.log(nums);
+
+
+
+        //第九题
+        //  var arr = [2, 6, 5, 8, 8, 8, 8, 8, 4, 6, 1, 3, 8];
+        //  var reat = {};
+        //  for (var i = 0; i < arr.length; i++) {
+        //      var n = arr[i];
+        //      if (reat[n]) {
+        //          reat[n]++;
+        //      } else {
+        //          reat[n] = 1;
+        //      }
+        //  }
+        //  var result; //结果对象
+        //  for(var prop in reat);
+        //  if(!result||reat[prop]>result.frequent){
+        //      result={
+        //          number:prop,
+        //          frequent:reat[prop]
+        //      }
+        //  }
+        //  console.log(result);
+
+
+
+
+
+
+
+
+        // var arr = [2, 6, 4, 5, 5, 8, 8, 8, 9, 9, 9, 6, 6, 6, 6];
+        // var recoad = {};
+        // for (var i = 0; i < arr.length; i++) {
+        //     
+        //     
+        //     
+        //     var n = arr[i];
+        //     if (recoad[n]) { //recoad[n]代表属性名字为n，n的值   不能写为recoad.n 代表对象属性名字为n,n的值不知道
+        //         recoad[n]++;
+        //     } else {
+        //         recoad[n] = 1;
+        //     }
+        // }
+        // var result;
+        // for (var prop in recoad) {
+        //     if (!result || recoad[prop] > result.frequency) {
+        //         result = {
+        //             number: prop,
+        //             frequency: recoad[prop]
+        //         }
+        //     }
+        // }
+        // console.log(result);
+
+
+        // 第一个对象recoad={ 5:10} 即属性名字为5 属性值为10
+        //第二个对象result={ number:porp   frequency:recoad[prop]  }
+        //prop被设第一个对象的属性名  所以属性值为recoad[prop]被当作频率来做比较
+
+        var arr = [2, 6, 4, 5, 5, 8, 8, 8, 9, 9, 9, 6, 6, 6, 6];
+        var recoad = {};
+        for (var i = 0; i < arr.length; i++) {
+            var n = arr[i];
+            if (recoad[n]) {
+                recoad[n]++;
+            } else {
+                recoad[n] = 1;
+            }
+        }
+        var result;
+        for (var prop in recoad) {
+            if (!result || recoad[prop] > result.frequency) {
+                result = {
+                    name: prop,
+                    frequency: recoad[prop]
                 }
             }
-            
         }
-        console.log(nums);
+        console.log(result);
     </script>
 </body>
 
