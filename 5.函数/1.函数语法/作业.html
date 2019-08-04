@@ -30,7 +30,34 @@
         //第八题
         // console.log(getDays(2000,2));
         //第九题
-        console.log( getTopFreqInArray([5,2,6,6,6,7,8,8,9,9,5]));
+       // console.log( getTopFreqInArray([5,2,6,6,6,7,8,8,9,9,5]));
+       //第十题
+     // function begin(){
+     //     var num = +prompt("请输入一个偶数");
+     //     if(isNaN(num)||isOdd(num)||num<=2){
+     //          console.log("输入有误");
+     //          return;
+     //     }
+     //     //输入正确
+     //     for(var i =2;i<=num-2;i++){
+     //         var j =num - i;
+     //         if(isPrime(i)&&isPrime(j)){
+     //             console.log(`${num}=${i}+${j}`);
+     //             return;
+     //         }
+     //     }
+     // }
+     // begin();
+
+     function nian(){
+         var year = +prompt("请输入一个年份");
+         for(m=1;m<=12;m++){
+             var day = getDays(year,m);
+             console.log(`${year}年，${m}月有${day}天`);         
+         }
+         return;
+     }
+     nian();
     </script>
 </body>
 

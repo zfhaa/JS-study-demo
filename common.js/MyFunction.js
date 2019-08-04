@@ -98,7 +98,10 @@ function getDays(year, month) {
         return 30;
     }
 }
-
+/**
+ * 得到某个数组中出现次数最多的数字和频率
+ * @param {*} arr 
+ */
 function getTopFreqInArray(arr){
     var recoad ={};
     var n = arr[i];
