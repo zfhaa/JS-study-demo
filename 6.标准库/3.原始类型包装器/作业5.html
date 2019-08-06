@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getInfoFromPID(pid) {
+            return {
+                birthYear: +pid.substr(6, 4),
+                birthMonth: +pid.substr(10, 2),
+                birthday: +pid.substr(12, 2),
+                gender: pid[pid.length - 2] % 2 === 0 ? "女" : "男" //pid.length - 2 代表倒数第二位
+            }
+        }
+
+        console.log(getInfoFromPID("412702199612167419"));
+    </script>
+</body>
+
+</html>

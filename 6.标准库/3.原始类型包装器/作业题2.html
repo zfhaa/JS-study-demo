@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   
+
+       <script>
+      
+       var s = "hello   world  js";
+      // var result = "";
+      // for(var i = 0;i<s.length;i++){
+      //     if(s[i]!==" "){
+      //         //判断s[i]是不是首字母
+      //         if(s[i-1]==" " ||i===0){
+      //          result+=  s[i].toUpperCase()
+      //         }else{
+      //          result+=s[i];
+      //         }
+      //         
+      //     }
+      // }
+      //     console.log(result);
+       function bigCamel(s){
+           //只考虑空格
+           return s.split(" ").filter(function(item){ //按空白字符分割，再把字符串长度大于0的筛选出来
+               return item.length>0;
+           }).map(function(item){  //映射数组中的每一项
+            //先把每个字符串首位字母即下标为0的字母变为大写，再拼接后面的字母，后面的字母全部设为小写
+               return item[0].toUpperCase()+item.substring(1).toLowerCase();
+           }).join("");//把所有字符串用空白字符连接起来
+       }
+       console.log(bigCamel(s));
+        </script>
+</body>
+</html>

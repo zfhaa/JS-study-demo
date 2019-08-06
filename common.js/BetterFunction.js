@@ -103,8 +103,9 @@ var BetterFunction = {
      */
     getTopFreqInArray: function (arr) {
         var recoad = {};
-        var n = arr[i];
+        
         for (var i = 0; i < arr.length; i++) {
+            var n = arr[i];
             if (recoad[n]) {
                 recoad[n]++;
             } else {
@@ -122,7 +123,7 @@ var BetterFunction = {
         }
         console.log(result);
     },
-    /**(2)
+    /**(1)
      * 给指定的数组升序排序
      * @param {*} arr 
      * @param {Function} compare 比较大小，
@@ -154,7 +155,7 @@ var BetterFunction = {
             }
         }
     },
-    /**
+    /**(2)
      * 按照指定的条件对某个数组进行筛选
      * @param {*} arr 
      *  @param {Function} callback 回调函数，接收两个参数，
@@ -186,7 +187,7 @@ var BetterFunction = {
         }
 
     },
-    /**
+    /**(4)
      * 按照指定的条件，得到某个数组中满足条件的元素数量
      * @param {*} arr 
      * @param {*} callback 回调函数，接收两个参数，
