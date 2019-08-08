@@ -103,7 +103,7 @@ var BetterFunction = {
      */
     getTopFreqInArray: function (arr) {
         var recoad = {};
-        
+
         for (var i = 0; i < arr.length; i++) {
             var n = arr[i];
             if (recoad[n]) {
@@ -195,20 +195,62 @@ var BetterFunction = {
      * 满足条件返回true，否则返回false 
      */
     count: function (arr, callback) {
-        var sum=0;
-        for (var i = 0; i < arr.length; i++) { 
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
             if (callback(arr[i], i)) {
                 sum++;
             }
         }
         return sum;
+    },
+    /**
+     * 计算今年多少岁了
+     * @param {*} year 
+     * @param {*} month 
+     * @param {*} day 
+     */
+    getAge: function (year, month, day) {
+        //得到当前日期
+        var now = new Date();
+        var dec = now.getFullYear() - year;
+        //处理闰年
+        if (month === 2 && day === 29 && !this.isLeap(now.getFullYear())) {
+            day = 28;
+        }
+        //得到生日
+        var birthdayThisYear = new Date(now.getFullYear(), month, day);
+        if (birthdayThisYear > now) {
+            dec--;
+        }
+        return dec;
+    },
+    /**
+     * 
+     * @param {*} month 
+     * @param {*} day 
+     */
+    getDaysToBirthday: function (month, day) {
+        var now = new Date();
+        var thisYear = now.getFullYear();
+        //今年的生日
+        var birthday = new Date(thisYear, month - 1, day);
+        if (birthday < now) {
+            birthday.setFullYear(thisYear + 1);
+        }
+        var timeDec = birthday - new Date();
+        var day = timeDec / (24 * 60 * 60 * 1000);
+        return Math.ceil(day);
     }
-}
-var arr = [23, 456, 45, 13, 46, 78, 44, 11];
-var sum = BetterFunction.count(arr, BetterFunction.isPrime) ;
-   
 
-console.log(sum);
+}
+
+
+// (4)测试
+// var arr = [23, 456, 45, 13, 46, 78, 44, 11];
+// var sum = BetterFunction.count(arr, BetterFunction.isPrime) ;
+//    
+// 
+// console.log(sum);
 
 //(3)测试
 // var arr = [23, 456, 45, 13, 46, 78, 44, 11];
