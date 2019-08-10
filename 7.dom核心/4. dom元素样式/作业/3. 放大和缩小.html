@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            overflow: hidden;
+            border: 2px solid;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            line-height: 200px;
+            text-align: center;
+            font-size: 100px;
+            font-family: 宋体;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        袁
+    </div>
+    <p>
+        <button id="big">放大</button>
+        <button id="small">缩小</button>
+    </p>
+
+    <script>
+        var btnB = document.getElementById("big"),
+            btnS = document.getElementById("small"),
+            yuan = document.querySelector(".container");
+
+            btnB.onclick = function(){
+               //得到当前的字体大小
+               var style = getComputedStyle(yuan);
+               var size = parseInt(style.fontSize);//得到当前字体大小，并转换为整数
+               var result = size +10;
+               if(result>200){
+                   result = 200;
+               }
+              yuan.style.fontSize = result+ "px";
+            }
+            btnS.onclick = function(){
+                var style = getComputedStyle(yuan);
+               var size = parseInt(style.fontSize);//得到当前字体大小，并转换为整数
+              yuan.style.fontSize = size - 10 + "px";
+            }
+            
+    </script>
+</body>
+
+</html>

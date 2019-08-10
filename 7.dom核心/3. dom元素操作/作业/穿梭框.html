@@ -43,16 +43,16 @@
         </div>
         <div class="left mid">
             <p>
-                <button title="右移动选中的">&gt;&gt;</button>
+                <button id="btnToRight" title="右移动选中的">&gt;&gt;</button>
             </p>
             <p>
-                <button title="右移动全部">&gt;&gt;|</button>
+                <button id="btnToRightAll" title="右移动全部">&gt;&gt;|</button>
             </p>
             <p>
-                <button title="左移动选中的">&lt;&lt;</button>
+                <button id="btnToLeft" title="左移动选中的">&lt;&lt;</button>
             </p>
             <p>
-                <button title="左移动全部">|&lt;&lt;</button>
+                <button id="btnToLeftAll" title="左移动全部">|&lt;&lt;</button>
             </p>
         </div>
         <div class="left">
@@ -63,6 +63,60 @@
         </div>
 
     </div>
+
+    <script>
+        var btnToLeft = document.getElementById("btnToLeft"),
+        btnToRight = document.getElementById("btnToRight"),
+        btnToLeftAll = document.getElementById("btnToLeftAll"),
+        btnToRightAll = document.getElementById("btnToRightAll"),
+        selLeft = document.getElementById("sel1"),
+        selRight = document.getElementById("sel2");
+
+        //得到某个select元素内部被选中的option数组
+        function getSelectedOptions(sel){
+            var opts = [];
+            for(var i =0;i<sel.children.length;i++){
+                 if(sel.children[i].selected){
+                      opts.push(sel.children[i]);
+                 }
+            }
+            return opts;
+        }
+        //将option数组中的东西添加到指定的select中
+        //opts:要添加的option数组
+        //sel:要添加到的select元素
+
+        function appendToSelect(opts,sel){
+            var frag =document.createDocumentFragment();
+            for(var i =0;i<opts.length;i++){
+                frag.appendChild(opts[i]);
+            }
+            sel.appendChild(frag)
+        }
+ 
+
+        btnToLeft.onclick = function(){
+            //获取右边选中的
+           var opts = getSelectedOptions(selRight);
+           //循环将该数组添加到左边的select中
+           appendToSelect(opts,selLeft);
+
+        }
+        btnToRight.onclick = function(){
+           //获取右边选中的
+           var opts = getSelectedOptions(selLeft);
+           //循环将该数组添加到左边的select中
+           appendToSelect(opts,selRight);
+        }
+        btnToLeftAll.onclick = function(){
+
+        }
+        btnToRightAll.onclick = function(){
+
+        }
+
+    
+    </script>
 </body>
 
 </html>

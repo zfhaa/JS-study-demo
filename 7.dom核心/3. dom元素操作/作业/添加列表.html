@@ -14,6 +14,9 @@
         p{
             text-align: center;
         }
+        p.error{
+                  color: red;
+        }
     </style>
 </head>
 
@@ -22,13 +25,31 @@
         <p>不能添加空的文本</p>
         <div class="input">
             <input type="text">
-            <button>添加</button>
+            <button id="btnAdd" >添加</button>
         </div>
         <ul class="list">
             <li>项目1</li>
             <li>项目2</li>
         </ul>
     </div>
+
+<script>
+var btnAdd = document.getElementById("btnAdd");
+var ul =document.querySelector(".list");
+var inp =document.querySelector("input");
+var p = document.querySelector("p");
+ btnAdd.onclick = function(){
+     if(inp.value.trim()===""){
+        p.className= "error";
+         return;
+     }
+     p.className= "";
+     var li = document.createElement("li");//每次点击获得一个新的LI
+     li.innerText = inp.value;//获得的li的值等于输在文本框里的值
+     inp.value = "";//添加完后把文本框里的内容清空
+     ul.appendChild(li);
+ }
+</script>
 
 </body>
 

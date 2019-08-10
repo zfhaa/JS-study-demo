@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        span{
+        span {
             min-width: 50px;
             display: inline-block;
             text-align: center;
@@ -14,21 +15,40 @@
         }
     </style>
 </head>
+
 <body>
     <p>
         库存的最小值为0
     </p>
     <div>
         库存：
-        <button>-1000</button>
-        <button>-100</button>
-        <button>-10</button>
-        <button>-</button>
-        <span>0</span>
-        <button>+</button>
-        <button>+10</button>
-        <button>+100</button>
-        <button>+1000</button>
+        <button data-plus="-1000">-1000</button>
+        <button data-plus="-100">-100</button>
+        <button data-plus="-10">-10</button>
+        <button data-plus="-1">-</button>
+        <span id="span">0</span>
+        <button data-plus="1">+</button>
+        <button data-plus="10">+10</button>
+        <button data-plus="100">+100</button>
+        <button data-plus="1000">+1000</button>
     </div>
+
+    <script>
+        var btns = document.querySelectorAll("button"),
+            span = document.getElementById("span");
+        for (var i = 0; i < btns.length; i++) {
+            var b = btns[i];//得到当前按钮
+           b.onclick = function() {
+                var num = parseInt(span.innerText); //得到里面文本是字符串，需要转换为数字
+                var plus = parseInt(this.dataset.plus);
+                var result = num + plus;
+                if (result < 0) {
+                    result = 0;
+                }
+                span.innerText = result;
+            }
+        }
+    </script>
 </body>
+
 </html>
