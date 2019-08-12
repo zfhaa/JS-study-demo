@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <input type="text">
+        <button id="add">添加</button>
+    </p>
+    <ul>
+        <li>
+            <span>列表1</span>
+            <button>删除</button>
+        </li>
+        <li>
+            <span>列表2</span>
+            <button>删除</button>
+        </li>
+        <li>
+            <span>列表3</span>
+            <button>删除</button>
+        </li>
+    </ul>
+</body>
+
+<script>
+    var add = document.getElementById("add");
+    var inp = document.querySelector("input");
+    var ul = document.querySelector("ul");
+    var btn = document.querySelector("button");
+
+    add.addEventListener("click", function (e) {
+        var value = inp.value;
+        var li = document.createElement("li");
+        li.innerHTML = ` <span>${value}</span>
+            <button>删除</button>`
+        inp.value = "";
+        ul.appendChild(li);
+    })
+
+    ul.onclick = function(e){
+        if(e.target.tagName === "BUTTON"){
+            e.target.parentElement.remove();
+        }
+    }
+</script>
+
+</html>

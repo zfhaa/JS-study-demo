@@ -39,8 +39,8 @@ var ul =document.querySelector(".list");
 var inp =document.querySelector("input");
 var p = document.querySelector("p");
  btnAdd.onclick = function(){
-     if(inp.value.trim()===""){
-        p.className= "error";
+     if(inp.value.trim()===""){ //trim 代表去掉首尾空白
+        p.className= "error";  //如果为空，给P设置一个类样式 error ，并结束函数
          return;
      }
      p.className= "";
