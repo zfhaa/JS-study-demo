@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .left {
+            float: left;
+            margin-left: 5px;
+            line-height: 25px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divstarts" class="left">
+        <img src="images/empty.png" alt="">
+        <img src="images/empty.png" alt="">
+        <img src="images/empty.png" alt="">
+        <img src="images/empty.png" alt="">
+        <img src="images/empty.png" alt="">
+    </div>
+</body>
+
+<div id="divwords" class="left">
+
+</div>
+<script>
+    var words = ["很差", "一般", "还不错", "满意", "非常满意", ];
+    var divstarts = document.getElementById("divstarts");
+    var divwords = document.getElementById("divwords");
+    var star = -1;
+
+    //鼠标移入时事件
+    divstarts.onmouseover = function (e) {
+        if (e.target.tagName === "IMG") {
+            e.target.src = "images/shining.png"
+            //处理移入之前的元素
+            var prev = e.target.previousElementSibling; //得到当前选中的图片的之前的元素
+            while (prev) {
+                prev.src = "images/shining.png";
+                prev = prev.previousElementSibling;
+            }
+            //处理移入之后的元素
+            var next = e.target.nextElementSibling; //得到当前选中的图片的之后的元素
+            while (next) {
+                next.src = "images/empty.png";
+                next = next.nextElementSibling;
+            }
+            //处理文字
+            var index = Array.from(divstarts.children).indexOf(e.target);
+            console.log(index);
+            divwords.innerHTML = words[index];
+        }
+    }
+
+
+
+       //点击事件
+    divstarts.onclick = function (e) {
+        if (e.target.tagName === "IMG") {
+            star = Array.from(divstarts.children).indexOf(e.target);
+        }
+    }
+
+    //离开之后的事件
+    divstarts.onmouseleave = function () {
+        divwords.innerHTML = words[star] || "";
+
+        for (var i = 0; i < divstarts.children.length; i++) {
+            if (i <= star) {
+                divstarts.children[i].src = "images/shining.png"
+            } else {
+                divstarts.children[i].src = "images/empty.png";
+            }
+
+        }
+       
+    }
+</script>
+
+</html>
