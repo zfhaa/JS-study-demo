@@ -37,17 +37,48 @@
         var btns = document.querySelectorAll("button"),
             span = document.getElementById("span");
         for (var i = 0; i < btns.length; i++) {
-            var b = btns[i];//得到当前按钮
-           b.onclick = function() {
-                var num = parseInt(span.innerText); //得到里面文本是字符串，需要转换为数字
+            console.log("abc")
+            var b = btns[i];
+            b.onclick = function () {
+                var num = parseInt(span.innerText);
                 var plus = parseInt(this.dataset.plus);
                 var result = num + plus;
-                if (result < 0) {
+                if(result<=0){
                     result = 0;
                 }
                 span.innerText = result;
             }
+
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // var btns = document.querySelectorAll("button"),
+        //     span = document.getElementById("span");
+        // for (var i = 0; i < btns.length; i++) {
+           
+        //     var b = btns[i];//得到当前按钮
+        //    b.onclick = function() {
+        //         var num = parseInt(span.innerText); //得到里面文本是字符串，需要转换为数字
+        //         var plus = parseInt(this.dataset.plus);
+        //         var result = num + plus;
+        //         if (result < 0) {
+        //             result = 0;
+        //         }
+        //         span.innerText = result;
+        //     }
+        // }
     </script>
 </body>
 

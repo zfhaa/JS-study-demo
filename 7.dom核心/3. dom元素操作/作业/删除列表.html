@@ -45,32 +45,47 @@
 
 
     <script>
-        var btnClearall = document.getElementById("btnClearall");
+        var btn = document.getElementById("btnClearall");
         var list = document.querySelector(".list");
-        btnClearall.onclick = function () {
+        btn.onclick = function () {
             list.innerHTML = "";
+        }     
+        var buttons = list.querySelectorAll("button");
+       for(var i = 0;i<buttons.length;i++){
+        var butt = buttons[i];
+            removeLi(butt);
+       }
+
+        function removeLi(re) {
+            re.onclick = function () {
+                re.parentNode.remove();
+            }
         }
 
 
-        //得到ul下的所有按钮
 
-        var btns = list.querySelectorAll("button");
-        for (var i = 0; i < btns.length; i++) {
-            var b = btns[i];//得到当前按钮
-            regEvent(b);
-      //      ( function (btn) {
-      //      btn.onclick = function () {
-      //          btn.parentNode.remove();
-      //      }
-      //  }(b));
-        }
-        function regEvent(btn){
-            btn.onclick = function () {
-              btn.parentNode.remove();
-        }
-    }
+        //     var btnClearall = document.getElementById("btnClearall");
+        //     var list = document.querySelector(".list");
+        //     btnClearall.onclick = function () {
+        //         list.innerHTML = "";
+        //     }
+        //     //得到ul下的所有按钮
 
-      
+        //     var btns = list.querySelectorAll("button");
+        //     for (var i = 0; i < btns.length; i++) {
+        //         var b = btns[i];//得到当前按钮
+        //         regEvent(b);
+        //   //      ( function (btn) {
+        //   //      btn.onclick = function () {
+        //   //          btn.parentNode.remove();
+        //   //      }
+        //   //  }(b));
+        //     }
+        //     function regEvent(btn){
+        //         btn.onclick = function () {
+        //           btn.parentNode.remove();
+        //     }
+        // }
     </script>
 </body>
 

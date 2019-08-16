@@ -34,21 +34,65 @@
     </div>
 
 <script>
-var btnAdd = document.getElementById("btnAdd");
-var ul =document.querySelector(".list");
-var inp =document.querySelector("input");
-var p = document.querySelector("p");
- btnAdd.onclick = function(){
-     if(inp.value.trim()===""){ //trim 代表去掉首尾空白
-        p.className= "error";  //如果为空，给P设置一个类样式 error ，并结束函数
-         return;
-     }
-     p.className= "";
-     var li = document.createElement("li");//每次点击获得一个新的LI
-     li.innerText = inp.value;//获得的li的值等于输在文本框里的值
-     inp.value = "";//添加完后把文本框里的内容清空
-     ul.appendChild(li);
- }
+    var btnAdd = document.getElementById("btnAdd");
+    var inp = document.querySelector("input");
+    var ul = document.querySelector(".list");
+    var p =document.querySelector("p");
+    btnAdd.onclick=function(){
+        if(inp.value===""){
+            p.className="error";
+            return;
+        }
+        p.className="";
+        var li = document.createElement("li");
+        li.innerText=inp.value;
+        inp.value="";
+        ul.appendChild(li);
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var btnAdd = document.getElementById("btnAdd");
+// var ul =document.querySelector(".list");
+// var inp =document.querySelector("input");
+// var p = document.querySelector("p");
+//  btnAdd.onclick = function(){
+//      if(inp.value.trim()===""){ //trim 代表去掉首尾空白
+//         p.className= "error";  //如果为空，给P设置一个类样式 error ，并结束函数
+//          return;
+//      }
+//      p.className= "";
+//      var li = document.createElement("li");//每次点击获得一个新的LI
+//      li.innerText = inp.value;//获得的li的值等于输在文本框里的值
+//      inp.value = "";//添加完后把文本框里的内容清空
+//      ul.appendChild(li);
+//  }
+
+
+
+
+
 </script>
 
 </body>
