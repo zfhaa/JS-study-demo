@@ -1,0 +1,76 @@
+.banner{
+    width: 520px;
+    height: 280px;
+    margin: 0 auto;
+    /* overflow: hidden; */
+    
+    position: relative;
+}
+.banner .img img{
+    width: 520px;
+    height: 280px;
+    display: block;
+}
+.banner .img a{
+    float: left;
+}
+.banner .dots{
+    position: absolute;
+    background: rgba(255,255,255,0.3);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 12px;
+    padding: 2px 4px;
+    border-radius: 8px;
+}
+.banner .dots span{
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin: 2px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.banner .dots span.active{
+    background: #f40;
+}
+.banner:hover .arrow{
+    display: block;
+}
+.banner .arrow {
+    display: none;
+}
+.banner .arrow .left{
+    position: absolute;
+    left: 0;
+    top: 100px;
+    background: rgba(0,0,0,.3);
+    color: #fff;
+    width: 20px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 0 17px 17px 0;
+    cursor: pointer;
+}
+.banner .arrow .left:hover{
+    background: rgba(0,0,0,.6);
+}
+.banner .arrow .right{
+    position: absolute;
+    right: 0;
+    top: 100px;
+    background: rgba(0,0,0,.3);
+    color: #fff;
+    width: 20px;
+    height: 30px;
+    line-height: 30px;
+    border-radius:  17px 0 0 17px;
+    cursor: pointer;
+    padding-left: 7px;
+    box-sizing: border-box;
+}
+.banner .arrow .right:hover{
+    background: rgba(0,0,0,.6);
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        p {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        倒计时：<span>5</span>
+    </p>
+    <p>
+        点击数：<span id="spannum">0</span>
+    </p>
+    <p>
+        <button id="btnadd">点击</button>
+        <button id="btnreset">重置</button>
+    </p>
+    <script>
+        var num = 0;
+        var timer;
+        var clock = 5;
+        var btnAdd = document.getElementById("btnadd");
+        var spanNum = document.getElementById("spannum");
+        var span  = document.querySelector("span");
+        var btnReset = document.getElementById("btnreset");
+        btnAdd.onclick = function () {
+            if (num === 0) {
+                setClock();
+            }
+            if(clock===0){
+            return;    
+            }
+            num++;
+            spanNum.innerText = num;
+        }
+        btnReset.onclick = function () {
+            num = 0;
+            clock= 5;
+            span.innerText = clock;
+            spanNum.innerHTML = num;
+        }
+
+        //开启一个计时器
+        function setClock() {
+            if (timer) {
+                return;
+            }
+            timer = setInterval(function () {
+                clock--;
+                span.innerText = clock;
+                if (clock === 0) {
+                    clearInterval(timer);
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
