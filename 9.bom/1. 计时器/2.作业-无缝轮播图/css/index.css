@@ -2,16 +2,18 @@
     width: 520px;
     height: 280px;
     margin: 0 auto;
-    /* overflow: hidden; */
-    
+    overflow: hidden;  
     position: relative;
 }
-.banner .img img{
+.banner .imgs{
+    overflow: hidden;
+}
+.banner .imgs img{
     width: 520px;
     height: 280px;
-    display: block;
+   display: block;
 }
-.banner .img a{
+.banner .imgs a{
     float: left;
 }
 .banner .dots{
