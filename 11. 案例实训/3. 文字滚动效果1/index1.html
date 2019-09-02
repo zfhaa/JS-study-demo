@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .container{
+        background: #008c8c;
+        height: 50px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .left{
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        color: aliceblue;
+    }
+    .title::after{
+        content:"|";
+        margin-left: 20px;
+        font-size: 27px;
+        vertical-align: -2px;
+        color: aliceblue;
+    }
+    .left ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-left: 20px;
+        height: 30px;
+        overflow: auto;
+    }
+    .left ul li{
+        height: 30px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left title">
+            最新公告
+        </div>
+        <div class="left">
+            <ul>
+                <li>1Lorem ipsum dolor sit.</li>
+                <li>2Quibusdam, exercitationem. Natus, est!</li>
+                <li>3Accusantium voluptatibus aliquam maiores.</li>
+                <li>4Aliquam placeat incidunt quis!</li>
+                <li>5Quia quae quo enim?</li>
+            </ul>
+
+        </div>
+
+    </div>
+    <script src="../../plugin/helpers.js"></script>
+    <script src="../../plugin/animate.js"></script>
+    <script src="../3. 文字滚动效果/index1.js"> </script>
+</body>
+</html>
