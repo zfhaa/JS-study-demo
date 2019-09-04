@@ -268,7 +268,7 @@
 
 
 
-
+//自己写的，粗略
 
 
 var lblScore = document.getElementById("integral");
@@ -294,7 +294,30 @@ table.onclick = function (e) {
     if(e.target.parentElement.className==="cart_td_8"){
         e.target.parentElement.parentElement.previousElementSibling.remove();
         e.target.parentElement.parentElement.remove();
+        calAllTrTotal();
+        calTotal();
     }
+    if(e.target.type==="checkbox"){
+        calTotal();
+    }
+    if(e.target.id==="allCheckBox"){
+        var inps = document.querySelectorAll("tbody input[type^=checkbox]");
+        for(var i =0;i<inps.length;i++){
+            inps[i].checked=e.target.checked;
+        }
+        calTotal();
+    }
+    if(e.target.alt==="delete"){
+        var trs = document.querySelectorAll("tbody tr[id^=product]");
+        for (var i = 0; i < trs.length; i++) {
+            var info = getTrInfo(trs[i]) ;
+            if(info.checked){
+                trs[i].previousElementSibling.remove();
+                trs[i].remove();
+            }
+        }
+    }
+    calTotal();
 }
 
 
